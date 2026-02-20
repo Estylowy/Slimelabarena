@@ -6,15 +6,13 @@
 <title>SLIME ARENA LAB — Idle Merge Battle</title>
 <meta name="description" content="Merge mutant blobs, build your army and survive 20 waves. Idle merge auto-battle game. Play free in browser.">
 <meta property="og:title" content="SLIME ARENA LAB">
-<meta name="author" content="Estel IT Mateusz Rusnak">
-<meta name="copyright" content="© 2025 Estel IT Mateusz Rusnak. All rights reserved.">
+<meta name="author" content="Estel IT">
+<meta name="copyright" content="© 2025 Estel IT. All rights reserved.">
 <meta name="generator" content="SAL-build-dd7571a30620">
-<meta name="company" content="Estel IT Mateusz Rusnak">
-<meta name="address" content="ul. Modelarska 18 lok. 2, 40-142 Katowice">
+<meta name="company" content="Estel IT">
 <meta name="tax-id" content="NIP: 6322038951 | REGON: 540300095">
 <!--
-  © 2025 Estel IT Mateusz Rusnak
-  ul. Modelarska 18 lok. 2, 40-142 Katowice
+  © 2025 Estel IT
   NIP: 6322038951 | REGON: 540300095
   Slime Arena Lab — Build dd7571a30620
   Unauthorized copying or distribution is strictly prohibited.
@@ -158,10 +156,6 @@
     font-family: 'Fredoka One', sans-serif;
     font-size: 22px;
     letter-spacing: 2px;
-    background: linear-gradient(135deg, #ffd60a, #ff9f0a, #ff6b9d);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     filter: drop-shadow(0 2px 8px rgba(255,214,10,0.4));
     display: flex; align-items: center; gap: 8px;
   }
@@ -466,6 +460,11 @@
     border-color: var(--yellow) !important;
     box-shadow: 0 0 22px rgba(255,214,10,.6) !important;
     transform: scale(1.06);
+    animation: selected-pulse 0.8s ease-in-out infinite alternate;
+  }
+  @keyframes selected-pulse {
+    from { box-shadow: 0 0 16px rgba(255,214,10,.5); }
+    to   { box-shadow: 0 0 32px rgba(255,214,10,.9); }
   }
   .grid-cell.merge-flash { animation: cell-flash .4s ease-out forwards; }
   /* Fortress relic: slots 12-19 locked */
@@ -735,7 +734,7 @@
   .arena-footer {
     padding: 10px 14px; border-top: 1px solid var(--border);
     display: flex; gap: 8px; flex-shrink: 0;
-    background: rgba(0,0,0,0.2);
+    background: linear-gradient(180deg, rgba(20,10,50,0.95) 0%, rgba(10,5,30,0.98) 100%);
   }
 
   /* ── START WAVE BUTTON ── */
@@ -1063,25 +1062,25 @@
     display: flex; align-items: center; gap: 12px;
     flex-shrink: 0;
   }
-  .shop-header-icon { font-size: 28px; }
+  .shop-header-icon { font-size: 32px; }
   .shop-header-text { flex: 1; }
   .shop-title {
-    font-family: 'Fredoka One', sans-serif; font-size: 22px;
+    font-family: 'Fredoka One', sans-serif; font-size: 24px;
     color: #fff; letter-spacing: 2px; line-height: 1;
     margin-bottom: 3px;
   }
-  .shop-subtitle { font-size: 10px; color: var(--dim); letter-spacing: 1.5px; text-transform: uppercase; }
-  .shop-body { overflow-y: auto; padding: 16px; flex: 1; }
+  .shop-subtitle { font-size: 12px; color: var(--dim); letter-spacing: 1.5px; text-transform: uppercase; }
+  .shop-body { overflow-y: auto; padding: 18px; flex: 1; }
   .shop-section-label {
-    font-size: 9px; letter-spacing: 2px; color: var(--dim);
-    text-transform: uppercase; padding: 0 2px 6px;
+    font-size: 11px; letter-spacing: 2px; color: var(--dim);
+    text-transform: uppercase; padding: 0 2px 7px;
     border-bottom: 1px solid rgba(255,255,255,0.05);
-    margin-bottom: 8px; margin-top: 12px;
+    margin-bottom: 10px; margin-top: 14px;
   }
   .shop-section-label:first-child { margin-top: 0; }
   .shop-item {
-    display: flex; align-items: center; gap: 12px;
-    padding: 12px 14px; border-radius: 14px; margin-bottom: 6px;
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 16px; border-radius: 14px; margin-bottom: 8px;
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.07);
     transition: all 0.15s; position: relative; overflow: hidden;
@@ -1103,26 +1102,26 @@
     pointer-events: none;
   }
   .shop-item.featured:hover { border-color: rgba(255,214,10,0.5); }
-  .shop-item-icon { font-size: 24px; flex-shrink: 0; width: 34px; text-align: center; }
+  .shop-item-icon { font-size: 30px; flex-shrink: 0; width: 40px; text-align: center; }
   .shop-item-info { flex: 1; min-width: 0; }
   .shop-item-name {
-    font-family: 'Fredoka One', sans-serif; font-size: 14px;
-    color: #fff; margin-bottom: 2px; display: flex; align-items: center; gap: 6px;
+    font-family: 'Fredoka One', sans-serif; font-size: 16px;
+    color: #fff; margin-bottom: 3px; display: flex; align-items: center; gap: 6px;
   }
   .shop-item-badge {
-    font-size: 8px; padding: 2px 6px; border-radius: 4px;
+    font-size: 9px; padding: 2px 7px; border-radius: 4px;
     background: rgba(255,214,10,0.2); color: var(--yellow);
     font-family: 'Nunito', sans-serif; font-weight: 700;
     letter-spacing: 0.5px; text-transform: uppercase;
   }
   .shop-item-badge.hot { background: rgba(255,107,107,0.2); color: #ff6b6b; }
   .shop-item-badge.new { background: rgba(76,217,100,0.2); color: var(--green); }
-  .shop-item-desc { font-size: 10px; color: var(--text2); line-height: 1.5; }
+  .shop-item-desc { font-size: 12px; color: var(--text2); line-height: 1.6; }
   .btn-shop-buy {
-    flex-shrink: 0; padding: 9px 16px;
+    flex-shrink: 0; padding: 11px 18px;
     background: linear-gradient(160deg, #bf5af2, #7c3aed);
     box-shadow: 0 4px 0 #4a0090, 0 0 20px rgba(191,90,242,0.3);
-    color: #fff; font-family: 'Fredoka One', sans-serif; font-size: 13px;
+    color: #fff; font-family: 'Fredoka One', sans-serif; font-size: 15px;
     border: none; border-radius: 12px; cursor: pointer;
     transition: filter .1s, transform .1s; white-space: nowrap;
     position: relative; z-index: 2;
@@ -1131,7 +1130,7 @@
   .btn-shop-buy:active { transform: translateY(2px); box-shadow: 0 2px 0 #4a0090; }
   .btn-shop-buy.owned {
     background: rgba(76,217,100,0.15); box-shadow: none;
-    color: var(--green); font-size: 11px; cursor: default;
+    color: var(--green); font-size: 13px; cursor: default;
     border: 1px solid rgba(76,217,100,0.3);
   }
   .btn-shop-buy.gold-btn {
@@ -1161,19 +1160,24 @@
   .btn-shop-open:hover { background: rgba(191,90,242,0.25); }
   /* Store-locked grid slots */
   .grid-cell.store-locked {
-    opacity: 0.2; cursor: pointer;
+    opacity: 0.55; cursor: pointer;
     background: repeating-linear-gradient(
-      45deg, rgba(191,90,242,0.05) 0px, rgba(191,90,242,0.05) 2px,
+      45deg, rgba(76,217,100,0.04) 0px, rgba(76,217,100,0.04) 2px,
       transparent 2px, transparent 8px) !important;
-    border-color: rgba(191,90,242,0.2) !important;
+    border-color: rgba(76,217,100,0.25) !important;
   }
   .grid-cell.store-locked:hover {
-    opacity: 0.45; border-color: rgba(191,90,242,0.6) !important;
-    box-shadow: 0 0 12px rgba(191,90,242,0.25) !important;
+    opacity: 0.85; border-color: rgba(76,217,100,0.7) !important;
+    box-shadow: 0 0 16px rgba(76,217,100,0.3) !important;
   }
+  /* Override the '+' pseudo-element for locked slots */
   .grid-cell.store-locked::after {
-    content: '$'; font-size: 18px; color: rgba(191,90,242,0.7);
-    font-family: 'Fredoka One', sans-serif;
+    content: '🔒' !important;
+    font-size: 22px !important;
+    color: unset !important;
+    filter: drop-shadow(0 0 8px rgba(76,217,100,0.9)) drop-shadow(0 0 16px rgba(76,217,100,0.5));
+    position: absolute;
+    font-family: unset !important;
   }
 
   /* ── OVERLAYS (relic / event) ── */
@@ -1227,6 +1231,57 @@
     0%, 100% { transform: translateY(0px); }
     50%       { transform: translateY(-2px); }
   }
+  @keyframes title-bounce {
+    0%, 100% { transform: translateY(0px); }
+    40%       { transform: translateY(-4px); }
+    60%       { transform: translateY(-2px); }
+  }
+  @keyframes letter-bounce {
+    0%, 70%, 100% { transform: translateY(0px); }
+    40%            { transform: translateY(-6px); }
+    55%            { transform: translateY(-2px); }
+  }
+  .tl {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffd60a, #ff9f0a, #ff6b9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: letter-bounce 2.4s ease-in-out infinite;
+  }
+  .title-text { white-space: nowrap; }
+  @keyframes chip-bob {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-2px); }
+  }
+
+  /* BUY button */
+  .btn-start:not(:disabled):not(.fighting) {
+    animation: btn-float 2.6s ease-in-out infinite;
+  }
+
+  /* AUTO button */
+  .btn-automerge {
+    animation: btn-float-slow 3.0s ease-in-out infinite;
+  }
+  .btn-automerge.active {
+    animation: btn-float-slow 1.8s ease-in-out infinite;
+  }
+
+  /* LAB button */
+  .btn-lab {
+    animation: btn-float-slow 3.5s ease-in-out infinite 0.4s;
+  }
+
+  /* Synergy chips */
+  .syn-chip {
+    animation: chip-bob 2.8s ease-in-out infinite;
+  }
+  .syn-chip:nth-child(2) { animation-delay: 0.4s; }
+  .syn-chip:nth-child(3) { animation-delay: 0.8s; }
+  .syn-chip:nth-child(4) { animation-delay: 1.2s; }
+  .syn-chip:nth-child(5) { animation-delay: 1.6s; }
+
   .btn-shop-open {
     animation: btn-float 2.8s ease-in-out infinite;
   }
@@ -1275,30 +1330,30 @@
   .relic-card  {
     background: linear-gradient(160deg, rgba(61,43,133,0.9), rgba(42,29,94,0.9));
     border: 2px solid rgba(255,255,255,0.12); border-radius: 16px;
-    padding: 18px 14px; width: 210px; cursor: pointer; transition: all 0.18s; text-align: left;
+    padding: 22px 18px; width: 230px; cursor: pointer; transition: all 0.18s; text-align: left;
   }
   .relic-card:hover {
     border-color: var(--yellow);
     box-shadow: 0 8px 30px rgba(255,214,10,0.2);
     transform: translateY(-4px) scale(1.02);
   }
-  .relic-card-name { font-family: 'Fredoka One', sans-serif; font-size: 14px; color: var(--yellow); margin-bottom: 8px; line-height: 1.4; }
-  .relic-card-desc { font-size: 10px; color: var(--text2); line-height: 1.6; }
+  .relic-card-name { font-family: 'Fredoka One', sans-serif; font-size: 17px; color: var(--yellow); margin-bottom: 10px; line-height: 1.4; }
+  .relic-card-desc { font-size: 13px; color: var(--text2); line-height: 1.7; }
 
-  .event-modal  { max-width: 640px; width: 95%; text-align: center; }
+  .event-modal  { max-width: 700px; width: 95%; text-align: center; }
   .event-title  {
-    font-family: 'Fredoka One', sans-serif; font-size: 24px;
-    color: var(--yellow); letter-spacing: 2px; margin-bottom: 4px;
+    font-family: 'Fredoka One', sans-serif; font-size: 28px;
+    color: var(--yellow); letter-spacing: 2px; margin-bottom: 6px;
     text-shadow: 0 2px 8px rgba(255,214,10,0.5);
   }
-  .event-sub   { font-size: 11px; color: var(--text2); margin-bottom: 16px; }
-  .event-cards { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 12px; }
+  .event-sub   { font-size: 14px; color: var(--text2); margin-bottom: 18px; }
+  .event-cards { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 14px; }
 
   /* Base card */
   .event-card  {
     background: linear-gradient(160deg, rgba(20,12,50,0.95), rgba(12,6,30,0.95));
     border: 2px solid rgba(255,255,255,0.12); border-radius: 16px;
-    padding: 16px 14px; width: 185px; cursor: pointer;
+    padding: 20px 16px; width: 210px; cursor: pointer;
     transition: all 0.20s ease; text-align: left;
     position: relative; overflow: hidden;
   }
@@ -1377,8 +1432,8 @@
     box-shadow: 0 0 24px rgba(249,115,22,0.5), 0 8px 20px rgba(0,0,0,0.4);
   }
 
-  .event-card-name { font-family: 'Fredoka One', sans-serif; font-size: 15px; color: var(--yellow); margin-bottom: 8px; }
-  .event-card-desc { font-size: 13px; color: var(--text2); line-height: 1.7; }
+  .event-card-name { font-family: 'Fredoka One', sans-serif; font-size: 18px; color: var(--yellow); margin-bottom: 10px; }
+  .event-card-desc { font-size: 14px; color: var(--text2); line-height: 1.7; }
   .btn-event-skip {
     padding: 8px 24px; background: rgba(255,255,255,0.07);
     border: 1px solid rgba(255,255,255,0.15); color: var(--text2);
@@ -2188,17 +2243,36 @@
   .btn-reward .rwd-cd { font-size: 9px; color: var(--dim); display: block; }
 
   /* ── TABS (right panel header) ── */
-  .tabs { display: flex; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+  .tabs {
+    display: flex; flex-shrink: 0;
+    background: rgba(0,0,0,0.3);
+    padding: 6px 6px 0;
+    gap: 4px;
+    border-bottom: 2px solid rgba(255,255,255,0.07);
+  }
   .tab {
-    flex: 1; padding: 10px 4px; text-align: center;
+    flex: 1; padding: 10px 4px 9px; text-align: center;
     font-family: 'Fredoka One', sans-serif; font-size: 12px;
-    color: var(--dim); cursor: pointer;
-    border: none; border-bottom: 3px solid transparent;
-    background: transparent; transition: all 0.15s;
+    color: rgba(255,255,255,0.35); cursor: pointer;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    background: transparent; transition: all 0.18s;
     text-transform: uppercase; letter-spacing: 1px;
   }
-  .tab:hover:not(.active) { color: #fff; background: rgba(255,255,255,0.05); }
-  .tab.active { color: var(--yellow); border-bottom-color: var(--yellow); }
+  .tab:hover:not(.active) {
+    color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.1);
+  }
+  .tab.active {
+    color: #fff;
+    background: linear-gradient(180deg, rgba(255,214,10,0.12) 0%, rgba(255,214,10,0.04) 100%);
+    border-color: rgba(255,214,10,0.3);
+    border-bottom: 2px solid #ffd60a;
+    text-shadow: 0 0 12px rgba(255,214,10,0.5);
+    box-shadow: 0 -2px 12px rgba(255,214,10,0.1) inset;
+  }
   .tab-content { display: none; flex: 1; overflow-y: auto; flex-direction: column; }
   .tab-content.active { display: flex; }
   .tab-content::-webkit-scrollbar { width: 3px; }
@@ -2576,6 +2650,20 @@
     #arena-zoom-ctrl, #btn-follow-mouse { display: none; }
     .btn-start { font-size: 13px; padding: 10px; flex: 1; }
     #notif-area { top: 8px; left: 8px; width: 180px; }
+
+    /* Zmniejsz kłódkę na małych ekranach */
+    .grid-cell.store-locked::after { font-size: 15px !important; }
+
+    /* Sklep — trochę mniejszy tekst żeby się mieścił */
+    .shop-item-name { font-size: 14px; }
+    .shop-item-desc { font-size: 11px; }
+    .btn-shop-buy   { font-size: 13px; padding: 9px 14px; }
+    .relic-card     { width: 160px; padding: 14px 12px; }
+    .relic-card-name { font-size: 14px; }
+    .relic-card-desc { font-size: 11px; }
+    .event-card     { width: 155px; padding: 14px 12px; }
+    .event-card-name { font-size: 15px; }
+    .event-card-desc { font-size: 12px; }
     .lose-title { font-size: 26px; }
     .lose-buttons { flex-direction: column; gap: 8px; align-items: center; }
     .btn-lose { font-size: 13px; padding: 11px 20px; }
@@ -3100,7 +3188,13 @@
 <body>
 
 <header>
-  <div class="title">SLIME ARENA LAB <span class="version-badge" onclick="_cheatClickCount()" title="???">PRE-ALFA 0.23</span></div>
+  <div class="title" style="position:relative; overflow:visible;">
+    <canvas id="title-slime-canvas" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:0;" width="400" height="60"></canvas>
+    <span class="title-text" style="position:relative;z-index:1;display:inline-flex;gap:0px;">
+      <span class="tl" style="animation-delay:0.00s">S</span><span class="tl" style="animation-delay:0.07s">L</span><span class="tl" style="animation-delay:0.14s">I</span><span class="tl" style="animation-delay:0.21s">M</span><span class="tl" style="animation-delay:0.28s">E</span><span class="tl" style="animation-delay:0.42s"> </span><span class="tl" style="animation-delay:0.49s">A</span><span class="tl" style="animation-delay:0.56s">R</span><span class="tl" style="animation-delay:0.63s">E</span><span class="tl" style="animation-delay:0.70s">N</span><span class="tl" style="animation-delay:0.77s">A</span><span class="tl" style="animation-delay:0.91s"> </span><span class="tl" style="animation-delay:0.98s">L</span><span class="tl" style="animation-delay:1.05s">A</span><span class="tl" style="animation-delay:1.12s">B</span>
+    </span>
+    <span class="version-badge" onclick="_cheatClickCount()" title="???" style="position:relative;z-index:1;">PRE-ALFA 0.23</span>
+  </div>
   <div class="currencies">
     <div class="currency gold">⚗ <span class="currency-val" id="gold-val">0</span> G</div>
     <div class="currency bio">🧬 <span class="currency-val" id="bio-val">0</span> BIO</div>
@@ -3270,8 +3364,8 @@
   <!-- RIGHT: Upgrades -->
   <div class="panel-upgrades">
     <div class="tabs">
-      <div class="tab active" id="upgrade-tab-0" onclick="switchTab('upgrades')">UPGRADES</div>
-      <div class="tab" onclick="switchTab('research')">RESEARCH</div>
+      <div class="tab active" id="upgrade-tab-0" onclick="switchTab('upgrades')">⚡ UPGRADES</div>
+      <div class="tab" onclick="switchTab('research')">🔬 RESEARCH</div>
       <div class="tab" onclick="switchTab('bioshop')" id="tab-bio-btn">🧬 BIO</div>
     </div>
     <div class="tab-content active" id="tab-upgrades">
@@ -3409,6 +3503,12 @@
         <div class="shop-title">LAB STORE</div>
         <div class="shop-subtitle">Spend Slime · Support the lab</div>
       </div>
+      <button onclick="closeShop()" style="
+        background:none; border:1px solid rgba(255,255,255,0.15); color:rgba(255,255,255,0.5);
+        font-size:18px; cursor:pointer; line-height:1; padding:6px 10px;
+        border-radius:10px; flex-shrink:0; transition:all 0.15s;
+      " onmouseover="this.style.color='#fff';this.style.borderColor='rgba(255,255,255,0.4)'"
+         onmouseout="this.style.color='rgba(255,255,255,0.5)';this.style.borderColor='rgba(255,255,255,0.15)'">✕</button>
     </div>
 
     <!-- TABS -->
@@ -3887,22 +3987,22 @@ let selectedCell = null;
 let dragSrc = null;
 function waveGoldReward(wave) {
  wave = wave || 1;
- const base = 30 + Math.pow(wave, 1.85) * 3.2;
- const boss = isBossWave(wave) ? 5 : 1;
- const presBonus = 1 + (G.prestige || 0) * 0.25;
- const upgradeBonus = 1 + (G.upgrades?.idle_boost || 0) * 0.35;
- const goldMult = 1 + (G.researchBonuses?.gold_mult || 0) * 0.15 + (G.upgrades?.gold_boost || 0) * 0.20;
+ const base = 12 + Math.pow(wave, 1.55) * 1.4;
+ const boss = isBossWave(wave) ? 3 : 1;
+ const presBonus = 1 + (G.prestige || 0) * 0.15;
+ const upgradeBonus = 1 + (G.upgrades?.idle_boost || 0) * 0.25;
+ const goldMult = 1 + (G.researchBonuses?.gold_mult || 0) * 0.10 + (G.upgrades?.gold_boost || 0) * 0.15;
  const bioMult = 1 + (G.bioGold || 0);
  const result = Math.floor(base * boss * presBonus * upgradeBonus * goldMult * bioMult);
- return isNaN(result) ? 30 : result;
+ return isNaN(result) ? 12 : result;
 }
 function getBuyCost() {
- const base = Math.floor(18 + Math.pow(G.wave, 1.9) * 2.2);
+ const base = Math.floor(10 + Math.pow(G.wave, 2.1) * 1.8);
  const mult = G.activeRelic === 'economy' ? 1.5 : 1;
  return Math.floor(base * mult);
 }
 function idleGoldPerSec() {
- return Math.sqrt(G.totalDPS) * 0.014 * (G.idleEfficiency / 0.30);
+ return Math.sqrt(G.totalDPS) * 0.006 * (G.idleEfficiency / 0.30);
 }
 const UNIT_TYPES = [
  null,
@@ -4842,7 +4942,7 @@ function closeLeaderboard() {
 async function loadLeaderboard() {
  const list = document.getElementById('lb-list');
  if (!window.storage) {
- list.innerHTML = `<li class="lb-empty">⚠ Leaderboard only available on claude.ai</li>`;
+ list.innerHTML = `<li class="lb-empty">🚧 Global leaderboard coming soon!<br><span style="font-size:11px;opacity:0.6;display:block;margin-top:6px">For now, write your score in Notepad 📝</span></li>`;
  return;
  }
  list.innerHTML = `<li class="lb-loading">${t('lbLoading')}</li>`;
@@ -4923,9 +5023,9 @@ async function submitScore() {
  ts: Date.now()
  };
  if (!window.storage) {
- setLbStatus('⚠ Leaderboard requires claude.ai', '#fb923c');
- btn.disabled = false;
- return;
+  setLbStatus('🚧 Leaderboard coming soon! For now, write your score in Notepad 📝', '#fb923c');
+  btn.disabled = false;
+  return;
  }
  try {
  await window.storage.set(lbMyKey, JSON.stringify(entry), true);
@@ -5868,19 +5968,33 @@ function handleCellClick(i) {
  selectedCell = null; renderGrid(); return;
  }
  if (selectedCell === null) {
- if (grid[i]) { selectedCell = i; sfx.tick(); }
+ if (grid[i]) {
+  selectedCell = i;
+  sfx.tick();
+  // Mały hint przy pierwszym zaznaczeniu (tylko raz)
+  if (!G._clickMergeHintShown) {
+   G._clickMergeHintShown = true;
+   showNotif('👆 Now click another blob to merge or move!', 'var(--yellow)');
+  }
+ }
  } else {
- if (selectedCell !== i) {
+ if (selectedCell === i) {
+  // Klik na tę samą — odznacz
+  selectedCell = null;
+  sfx.tick();
+  renderGrid();
+  return;
+ }
  const src = grid[selectedCell], tgt = grid[i];
  if (tgt && src && src.tier === tgt.tier && src.tier < 10) {
- doMerge(selectedCell, i);
+  doMerge(selectedCell, i);
  } else if (!tgt) {
- grid[i] = src;
- grid[selectedCell] = null;
+  grid[i] = src;
+  grid[selectedCell] = null;
  } else {
- grid[i] = src;
- grid[selectedCell] = tgt;
- }
+  // Swap
+  grid[i] = src;
+  grid[selectedCell] = tgt;
  }
  selectedCell = null;
  renderGrid();
@@ -6049,7 +6163,7 @@ const ARENA_EVENTS = [
      if (!G.fighting) return;
      const et = ENEMY_TYPES[Math.min(2, Math.floor(G.wave / 10))];
      const side = Math.random() < 0.5 ? 1 : -1;
-     enemies.push(makeEnemy(side > 0 ? canvas.width + 20 : -20, 60 + Math.random() * (canvas.height - 120), et, Math.pow(1.065, G.wave - 1) * 0.7));
+     enemies.push(makeEnemy(side > 0 ? canvas.width + 20 : -20, 60 + Math.random() * (canvas.height - 120), et, Math.pow(1.10, G.wave - 1) * 0.7));
     }, i * 600);
    }
  },
@@ -6162,7 +6276,7 @@ function toggleWave() {
  resetMergeStreak();
  if (miniB) {
   const mb = MINI_BOSSES[G.wave % MINI_BOSSES.length];
-  const hpScale = Math.pow(1.065, G.wave - 1);
+  const hpScale = Math.pow(1.10, G.wave - 1);
   const mbEnemy = {
    x: canvas.width + 30, y: canvas.height / 2,
    hp: mb.hpMult * 100 * hpScale * (2 + G.prestige * 0.3),
@@ -6267,15 +6381,15 @@ function spawnMeteors() {
 }
 function spawnNormalWave(wave) {
  const count = wave <= 3
- ? 3 + wave 
+ ? 4 + wave
  : wave <= 5
- ? 5 + wave * 1.5 
- : Math.min(8 + Math.floor(wave * 2.8), 80);
+ ? 7 + Math.floor(wave * 2)
+ : Math.min(12 + Math.floor(wave * 3.5), 120);
  const w = canvas.width, h = canvas.height;
  for (let i = 0; i < count; i++) {
  const typeIdx = getEnemyTypeForWave(wave);
  const et = ENEMY_TYPES[typeIdx];
- const hpScale = Math.pow(1.065, wave - 1); 
+ const hpScale = Math.pow(1.10, wave - 1); // było 1.065 — teraz mocniejszy scaling
  const side = Math.random() < 0.5 ? -20 : w + 20;
  const y = 20 + Math.random() * (h - 40);
  enemies.push(makeEnemy(side, y, et, hpScale));
@@ -6284,8 +6398,8 @@ function spawnNormalWave(wave) {
 function spawnBossEnemy(wave) {
  const boss = getBossForWave(wave);
  const cycle = Math.floor((Math.floor(wave / 10) - 1) / BOSS_TYPES.length); // ile razy przeszliśmy przez cykl
- const cycleBonus = 1 + cycle * 0.8; // każdy cykl +80% HP
- const hpScale = (1 + wave * 0.08) * (1 + G.prestige * 0.25) * cycleBonus;
+ const cycleBonus = 1 + cycle * 1.2; // każdy cykl +120% HP (było 80%)
+ const hpScale = (1 + wave * 0.14) * (1 + G.prestige * 0.30) * cycleBonus; // było 0.08
  const w = canvas.width || 600;
  const h = canvas.height || 400;
  const e = {
@@ -6317,7 +6431,7 @@ function spawnMinionWave(wave, count) {
  const et = ENEMY_TYPES[typeIdx];
  const side = Math.random() < 0.5 ? -20 : w + 20;
  const y = 15 + Math.random() * (h - 30);
- enemies.push(makeEnemy(side, y, et, Math.pow(1.065, wave - 1)));
+ enemies.push(makeEnemy(side, y, et, Math.pow(1.10, wave - 1)));
  }
 }
 function makeEnemy(x, y, et, hpScale) {
@@ -6560,7 +6674,7 @@ function updateArena(dt, rawDt = 0.016) {
    const et = ENEMY_TYPES[getEnemyTypeForWave(G.wave)];
    const side = Math.random() < 0.5 ? -20 : w + 20;
    const y = 20 + Math.random() * (h - 40);
-   enemies.push(makeEnemy(side, y, et, Math.pow(1.065, G.wave - 1)));
+   enemies.push(makeEnemy(side, y, et, Math.pow(1.10, G.wave - 1)));
    G._waveSpawned++;
   }
  }
@@ -6569,7 +6683,7 @@ function updateArena(dt, rawDt = 0.016) {
    const et = ENEMY_TYPES[0];
    const side = Math.random() < 0.5 ? -20 : w + 20;
    const y = 20 + Math.random() * (h - 40);
-   enemies.push(makeEnemy(side, y, et, Math.pow(1.065, G.wave - 1) * 0.6));
+   enemies.push(makeEnemy(side, y, et, Math.pow(1.10, G.wave - 1) * 0.6));
    G._waveSpawned++;
   }
  }
@@ -6593,7 +6707,7 @@ function updateArena(dt, rawDt = 0.016) {
  const nightmareEnemyMult = _nightmareEnemyMult;
  const _wv = G.wave;
  const baseEnemyDmg = _wv <= 50
-   ? 3.5 * Math.pow(1.065, _wv - 1)
+   ? 3.5 * Math.pow(1.10, _wv - 1)
    : 76.6 * Math.pow(1.03, _wv - 50);
  const dmgToUnit = (e.isBoss ? baseEnemyDmg * 4.5 : baseEnemyDmg) * dt * nightmareEnemyMult;
  nearest.hp -= dmgToUnit;
@@ -7027,9 +7141,9 @@ function onEnemyKill(e, killer) {
  }
  checkDailyProgress('kills', 1);
  const goldMult = G.activeRelic === 'economy' ? 2.0 : 1;
- const goldEarned = Math.floor(e.reward * (1 + G.wave * 0.08) * goldMult);
+ const goldEarned = Math.floor(e.reward * (1 + G.wave * 0.04) * goldMult);
  G.gold += goldEarned;
- G.biomass += Math.max(0, Math.floor(e.reward * 0.06));
+ G.biomass += Math.max(0, Math.floor(e.reward * 0.03));
  sfx.kill();
  if (e.isBoss) {
  G.research += Math.floor(e.reward * 0.04);
@@ -8279,8 +8393,8 @@ function endWave(victory) {
  document.getElementById('pill-kills').className = 'stat-pill';
  if (victory) {
  const bonus = waveGoldReward(G.wave);
- const bioBonus = Math.floor(G.wave * 1.5);
- const resBonus = Math.floor(G.wave * 0.7);
+ const bioBonus = Math.floor(G.wave * 0.7);
+ const resBonus = Math.floor(G.wave * 0.3);
  G.gold += bonus;
  G.biomass += bioBonus;
  G.research += resBonus;
@@ -8296,6 +8410,15 @@ function endWave(victory) {
  const wasLastWave = false; // nieskończona gra — nie ma ostatniej fali
  G.wave = G.wave + 1;
  tickActiveEffects();
+ // ── MERGE LAB HINT — pokazuje się raz po wave 15 ──
+ if (G.wave === 16 && !G._labHintSeen) {
+  G._labHintSeen = true;
+  setTimeout(showMergeLabHint, 1200);
+ }
+ // ── SHARE/FEEDBACK HINT — co 30 wave ──
+ if (G.wave % 30 === 1 && G.wave > 1) {
+  setTimeout(showShareHint, 1200);
+ }
  if (wasLastWave) {
  triggerWinScreen();
  return;
@@ -8813,6 +8936,166 @@ function showWaveClearedBanner(wave, gold) {
   void el.offsetWidth; // reflow
   el.classList.add('show');
   setTimeout(() => el.classList.remove('show'), 2400);
+}
+
+function showMergeLabHint() {
+  // Utwórz overlay jeśli nie istnieje
+  const existing = document.getElementById('lab-hint-overlay');
+  if (existing) existing.remove();
+
+  const overlay = document.createElement('div');
+  overlay.id = 'lab-hint-overlay';
+  overlay.style.cssText = `
+    position:fixed; inset:0; z-index:9500;
+    background:rgba(0,0,0,0.75); backdrop-filter:blur(4px);
+    display:flex; align-items:center; justify-content:center;
+    animation: fadeIn 0.3s ease;
+  `;
+
+  overlay.innerHTML = `
+    <div style="
+      background: linear-gradient(135deg, rgba(20,10,50,0.98) 0%, rgba(30,15,70,0.98) 100%);
+      border: 1px solid rgba(191,90,242,0.5);
+      border-radius: 20px; padding: 32px 28px; max-width: 340px; width: 90%;
+      box-shadow: 0 0 60px rgba(191,90,242,0.25), 0 20px 60px rgba(0,0,0,0.7);
+      text-align:center; position:relative;
+    ">
+      <div style="font-size:48px; margin-bottom:12px; filter:drop-shadow(0 0 16px #bf5af2);">⚗</div>
+      <div style="
+        font-family:'Fredoka One',sans-serif; font-size:22px; color:#bf5af2;
+        letter-spacing:2px; margin-bottom:6px; text-shadow: 0 0 20px rgba(191,90,242,0.6);
+      ">MERGE LAB UNLOCKED</div>
+      <div style="
+        font-size:11px; color:rgba(255,255,255,0.4); letter-spacing:2px;
+        text-transform:uppercase; margin-bottom:16px;
+      ">Special crafting system</div>
+      <div style="
+        font-size:13px; color:rgba(255,255,255,0.75); line-height:1.6;
+        margin-bottom:20px; padding: 0 4px;
+      ">
+        Combine specific units to forge <strong style="color:#ffd700">legendary creatures</strong>
+        with unique abilities — like the <strong style="color:#ff6b35">Inferno Slug</strong>,
+        <strong style="color:#4cd964">Bio Titan</strong> or
+        <strong style="color:#5ac8fa">Mech Overlord</strong>.<br><br>
+        Tap <strong style="color:#bf5af2">⚗ LAB</strong> to discover all recipes!
+      </div>
+      <div style="display:flex; gap:10px; justify-content:center;">
+        <button onclick="document.getElementById('lab-hint-overlay').remove(); openMergeLab();" style="
+          padding:12px 22px; border-radius:12px; border:none; cursor:pointer;
+          background:linear-gradient(135deg,#bf5af2,#7c3aed);
+          color:#fff; font-family:'Fredoka One',sans-serif; font-size:15px;
+          letter-spacing:1px; box-shadow:0 4px 0 #5b21b6, 0 6px 20px rgba(191,90,242,0.4);
+          transition:transform 0.1s;
+        " onmousedown="this.style.transform='translateY(3px)'" onmouseup="this.style.transform=''">
+          ⚗ OPEN LAB
+        </button>
+        <button onclick="document.getElementById('lab-hint-overlay').remove();" style="
+          padding:12px 18px; border-radius:12px; border:1px solid rgba(255,255,255,0.15);
+          cursor:pointer; background:rgba(255,255,255,0.05);
+          color:rgba(255,255,255,0.5); font-family:'Fredoka One',sans-serif; font-size:13px;
+          transition:all 0.15s;
+        " onmouseover="this.style.background='rgba(255,255,255,0.1)'"
+           onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+          Later
+        </button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+  sfx.prestige?.();
+}
+
+function showShareHint() {
+  const existing = document.getElementById('share-hint-overlay');
+  if (existing) existing.remove();
+
+  const overlay = document.createElement('div');
+  overlay.id = 'share-hint-overlay';
+  overlay.style.cssText = `
+    position:fixed; inset:0; z-index:9500;
+    background:rgba(0,0,0,0.75); backdrop-filter:blur(4px);
+    display:flex; align-items:center; justify-content:center;
+    animation: fadeIn 0.3s ease;
+  `;
+
+  overlay.innerHTML = `
+    <div style="
+      background: linear-gradient(135deg, rgba(15,8,40,0.98) 0%, rgba(25,12,60,0.98) 100%);
+      border: 1px solid rgba(255,215,0,0.35);
+      border-radius: 20px; padding: 32px 28px; max-width: 360px; width: 90%;
+      box-shadow: 0 0 60px rgba(255,215,0,0.15), 0 20px 60px rgba(0,0,0,0.7);
+      text-align:center; position:relative;
+    ">
+      <div style="font-size:52px; margin-bottom:12px; line-height:1;">🧬</div>
+      <div style="
+        font-family:'Fredoka One',sans-serif; font-size:21px; color:#ffd700;
+        letter-spacing:1.5px; margin-bottom:6px;
+        text-shadow: 0 0 20px rgba(255,215,0,0.5);
+      ">YOU REACHED WAVE ${G.wave - 1}!</div>
+      <div style="
+        font-size:11px; color:rgba(255,255,255,0.35); letter-spacing:2px;
+        text-transform:uppercase; margin-bottom:18px;
+      ">that's seriously impressive 👀</div>
+      <div style="
+        font-size:13.5px; color:rgba(255,255,255,0.8); line-height:1.7;
+        margin-bottom:8px; padding: 0 4px;
+      ">
+        If you're enjoying <strong style="color:#ffd700">Slime Arena</strong>,
+        we'd love to hear what you think! 💬<br><br>
+        Your feedback — good or bad — is genuinely
+        <strong style="color:#4cd964">priceless</strong> to us.
+        It shapes what gets built next.<br><br>
+        <span style="color:rgba(255,255,255,0.45); font-size:12px;">
+          Even just sharing it with one friend means the world 🙏
+        </span>
+      </div>
+
+      <div style="
+        margin: 18px 0 22px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 12px; padding: 14px 16px;
+        font-size:12px; color:rgba(255,255,255,0.5); font-style:italic; line-height:1.5;
+      ">
+        "Reached wave 30 in Slime Arena! 🧬⚔️ This game is unexpectedly addictive..."
+        <br><span style="font-size:10px; opacity:0.5;">— suggested tweet / message 😄</span>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:9px;">
+        <button onclick="
+          try { navigator.clipboard.writeText('I just reached Wave ${G.wave - 1} in Slime Arena! 🧬⚔️ This game is unexpectedly addictive — give it a try!'); }
+          catch(e) {}
+          this.textContent = '✓ Copied to clipboard!';
+          this.style.background = 'linear-gradient(135deg,#4cd964,#26a843)';
+          setTimeout(() => document.getElementById('share-hint-overlay')?.remove(), 1800);
+        " style="
+          padding:13px 22px; border-radius:12px; border:none; cursor:pointer;
+          background:linear-gradient(135deg,#ffd700,#f59e0b);
+          color:#1a0a00; font-family:'Fredoka One',sans-serif; font-size:15px;
+          letter-spacing:0.5px; box-shadow:0 4px 0 #b45309, 0 6px 20px rgba(255,215,0,0.3);
+          transition:transform 0.1s;
+        " onmousedown="this.style.transform='translateY(3px)'" onmouseup="this.style.transform=''">
+          📋 Copy &amp; Share
+        </button>
+        <button onclick="document.getElementById('share-hint-overlay').remove();" style="
+          padding:11px 18px; border-radius:12px;
+          border:1px solid rgba(255,255,255,0.12);
+          cursor:pointer; background:rgba(255,255,255,0.04);
+          color:rgba(255,255,255,0.4); font-family:'Fredoka One',sans-serif; font-size:13px;
+          transition:all 0.15s;
+        " onmouseover="this.style.background='rgba(255,255,255,0.09)'"
+           onmouseout="this.style.background='rgba(255,255,255,0.04)'">
+          Maybe later — back to slaying 🗡
+        </button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+  sfx.prestige?.();
 }
 
 function formatNum(n) {
@@ -10786,8 +11069,8 @@ const ITUT_STEPS = [
  id: 'merge',
  icon: '🔀',
  title: 'MERGE THEM!',
- desc: '<strong>Drag</strong> one blob onto the other identical blob to fuse them into a stronger tier.',
- hint: '🖱 Drag one blob onto another',
+ desc: 'Two ways to merge blobs:<br><br>🖱 <strong>Drag & Drop</strong> — drag one blob onto another of the same tier.<br><br>👆 <strong>Click & Click</strong> — click a blob to select it (it glows yellow!), then click another blob of the same tier to fuse them.',
+ hint: '🖱 Drag or click to merge',
  target: 'merge-grid',
  arrow: 'right',
  wait: 'merged', 
@@ -11137,5 +11420,172 @@ function itutFinish() {
       </div>
     </div>
   </div>
+
+<script>
+(function() {
+  const COLORS = ['#4cd964','#5ac8fa','#bf5af2','#ff9f0a','#ff453a','#ffd60a'];
+  const EMOJIS = ['🟢','🔵','🟣','🟡'];
+  let slimes = [];
+  let _titleRaf = null;
+
+  function initTitleSlimes() {
+    const cvs = document.getElementById('title-slime-canvas');
+    if (!cvs) return;
+    const titleEl = cvs.parentElement;
+    const W = titleEl.offsetWidth + 120;
+    const H = 64;
+    cvs.width = W;
+    cvs.height = H;
+    cvs.style.width = W + 'px';
+    cvs.style.height = H + 'px';
+    cvs.style.left = '50%';
+    cvs.style.top = '50%';
+    cvs.style.transform = 'translate(-50%,-50%)';
+
+    slimes = [];
+    scheduleTitleSlime(W, H, 400);
+    scheduleTitleSlime(W, H, 2500);
+    scheduleTitleSlime(W, H, 4800);
+
+    if (_titleRaf) cancelAnimationFrame(_titleRaf);
+    animateTitleSlimes(cvs, W, H);
+  }
+
+  function scheduleTitleSlime(W, H, delay) {
+    setTimeout(() => {
+      spawnTitleSlime(W, H);
+      setTimeout(function loop() {
+        if (slimes.length < 3) spawnTitleSlime(W, H);
+        setTimeout(loop, 6000 + Math.random() * 4000);
+      }, 6000 + Math.random() * 4000);
+    }, delay);
+  }
+
+  function spawnTitleSlime(W, H) {
+    const goRight = Math.random() < 0.5;
+    const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+    const r = 7 + Math.random() * 5;
+    const speed = 28 + Math.random() * 22;
+    const y = H * 0.3 + Math.random() * H * 0.4;
+    slimes.push({
+      x: goRight ? -r * 2 : W + r * 2,
+      y,
+      r,
+      color,
+      vx: goRight ? speed : -speed,
+      vy: 0,
+      phase: Math.random() * Math.PI * 2,
+      wobble: 0.8 + Math.random() * 0.5,
+      dead: false,
+      trail: [],
+      goRight,
+      W, H,
+    });
+  }
+
+  let _lastTitleT = 0;
+  function animateTitleSlimes(cvs, W, H) {
+    const ctx = cvs.getContext('2d');
+    function frame(ts) {
+      const dt = Math.min((ts - _lastTitleT) / 1000, 0.05);
+      _lastTitleT = ts;
+      ctx.clearRect(0, 0, W, H);
+
+      slimes = slimes.filter(s => !s.dead);
+      slimes.forEach(s => {
+        // Movement
+        s.x += s.vx * dt;
+        s.phase += dt * 6;
+        s.y += Math.sin(s.phase * s.wobble) * 18 * dt;
+        // Clamp vertical
+        s.y = Math.max(s.r + 2, Math.min(H - s.r - 2, s.y));
+
+        // Trail
+        s.trail.push({ x: s.x, y: s.y, a: 0.35 });
+        if (s.trail.length > 10) s.trail.shift();
+
+        // Kill when off screen
+        if (s.goRight && s.x > W + s.r * 3) s.dead = true;
+        if (!s.goRight && s.x < -s.r * 3) s.dead = true;
+
+        // Draw trail
+        s.trail.forEach((p, i) => {
+          const prog = i / s.trail.length;
+          ctx.save();
+          ctx.globalAlpha = prog * p.a;
+          ctx.fillStyle = s.color;
+          ctx.shadowColor = s.color;
+          ctx.shadowBlur = 6;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, s.r * (0.3 + prog * 0.5), 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        });
+
+        // Squish based on velocity direction
+        const squishX = 1 + 0.18 * Math.abs(Math.sin(s.phase));
+        const squishY = 1 / squishX;
+
+        // Draw body
+        ctx.save();
+        ctx.translate(s.x, s.y);
+        ctx.scale(squishX, squishY);
+        ctx.globalAlpha = 0.92;
+
+        // Glow
+        ctx.shadowColor = s.color;
+        ctx.shadowBlur = 12;
+        const grad = ctx.createRadialGradient(-s.r*0.25, -s.r*0.3, 0, 0, 0, s.r);
+        grad.addColorStop(0, s.color + 'ff');
+        grad.addColorStop(0.6, s.color + 'cc');
+        grad.addColorStop(1, s.color + '44');
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(0, 0, s.r, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Shine
+        ctx.globalAlpha = 0.4;
+        ctx.fillStyle = '#fff';
+        ctx.shadowBlur = 0;
+        ctx.beginPath();
+        ctx.arc(-s.r * 0.28, -s.r * 0.32, s.r * 0.22, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Eye (direction aware)
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = '#000';
+        const eyeX = s.goRight ? s.r * 0.25 : -s.r * 0.25;
+        ctx.beginPath();
+        ctx.arc(eyeX, -s.r * 0.1, s.r * 0.18, 0, Math.PI * 2);
+        ctx.fill();
+        // Pupil shine
+        ctx.fillStyle = '#fff';
+        ctx.beginPath();
+        ctx.arc(eyeX + s.r*0.07, -s.r*0.17, s.r*0.07, 0, Math.PI*2);
+        ctx.fill();
+
+        ctx.restore();
+      });
+
+      _titleRaf = requestAnimationFrame(frame);
+    }
+    _titleRaf = requestAnimationFrame(frame);
+  }
+
+  // Init after DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => setTimeout(initTitleSlimes, 300));
+  } else {
+    setTimeout(initTitleSlimes, 300);
+  }
+
+  // Reinit on resize
+  window.addEventListener('resize', () => {
+    clearTimeout(window._titleResizeT);
+    window._titleResizeT = setTimeout(initTitleSlimes, 200);
+  });
+})();
+</script>
 </body>
 </html>
